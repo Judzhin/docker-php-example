@@ -1,0 +1,41 @@
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+forum.vido.com.ua/*
+
+# Uploaded files
+files/*
+!files/.gitkeep
+!files/cache/.gitkeep
+!files/selenoid/.gitkeep
+!files/upload/.gitkeep
+
+.idea/*
+
+scripts/parse_price/logs/*
+scripts/settings.php
+scripts/settings_pricelab.php
+/global.yml
+/global.yml.*
+/VidoAdminApp/app/config/application.yml
+/VidoNewsApp/app/config/application.yml
+/VidoPriceLabApp/app/config/application.yml
+temp/
+temp/*
+/VidoAdminApp/behat.yml
+/VidoErcEventApp/behat.yml
+/VidoNewsApp/behat.yml
+/VidoAdminApp/web/upload
+
+.env
+
+#Data
+db
+.docker/.data
