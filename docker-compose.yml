@@ -10,6 +10,7 @@ services:
       dockerfile: .docker/php-fpm/Dockerfile
       args:
         APP_ENV: ${APP_ENV}
+        XDEBUG_REMOTE_HOST: ${XDEBUG_REMOTE_HOST}
     volumes:
       - ./:/var/www/html:rw
       - ~/.composer:/root/.composer/cache
