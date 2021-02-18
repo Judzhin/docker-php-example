@@ -14,8 +14,9 @@ services:
       - ./:/var/www/html:rw
       - ~/.composer:/root/.composer/cache
     environment:
-      XDEBUG_CONFIG: "remote_host=host.docker.internal remote_enable=1"
+      XDEBUG_CONFIG: "remote_enable=1"
       PHP_IDE_CONFIG: "serverName=Docker"
+      XDEBUG_SESSION: "xdebug_is_great"
 
   nginx:
     container_name: docker-nginx-example-${APP_ENV}
