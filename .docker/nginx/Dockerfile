@@ -7,9 +7,6 @@ ENV APP_ENV=${APP_ENV}
 COPY .docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY .docker/nginx/default_${APP_ENV}.conf /etc/nginx/conf.d/default.conf
 
-# ENTRYPOINT ["dumb-init", "--rewrite", "15:3"]
-CMD ["nginx", "-g", "daemon off;"]
-
 WORKDIR /var/www/html
 
 # DEV env (local)
@@ -19,3 +16,5 @@ FROM scratch as test
 
 # PROD env (kubernetes)
 FROM scratch as prod
+
+CMD ["nginx", "-g", "daemon off;"]
