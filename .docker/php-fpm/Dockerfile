@@ -4,6 +4,8 @@ ARG APP_ENV
 ENV APP_ENV=${APP_ENV}
 ARG XDEBUG_REMOTE_HOST
 ENV XDEBUG_REMOTE_HOST=${XDEBUG_REMOTE_HOST}
+ARG XDEBUG_REMOTE_CONNECT_BACK
+ENV XDEBUG_REMOTE_CONNECT_BACK=${XDEBUG_REMOTE_CONNECT_BACK}
 
 # Add php config
 COPY .docker/php-fpm/php_${APP_ENV}.ini /usr/local/etc/php/php.ini
@@ -23,7 +25,8 @@ FROM scratch as dev
 
 RUN pecl install xdebug-2.9.8 \
     && docker-php-ext-enable xdebug \
-    && echo "xdebug.remote_host=${XDEBUG_REMOTE_HOST}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    && echo "xdebug.remote_host=${XDEBUG_REMOTE_HOST}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_connect_back=${XDEBUG_REMOTE_CONNECT_BACK}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 COPY .docker/php-fpm/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 

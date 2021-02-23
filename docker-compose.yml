@@ -11,6 +11,7 @@ services:
       args:
         APP_ENV: ${APP_ENV}
         XDEBUG_REMOTE_HOST: ${XDEBUG_REMOTE_HOST}
+        XDEBUG_REMOTE_CONNECT_BACK: ${XDEBUG_REMOTE_CONNECT_BACK}
     volumes:
       - ./:/var/www/html:rw
       - ~/.composer:/root/.composer/cache
