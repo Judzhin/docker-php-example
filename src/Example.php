@@ -21,11 +21,10 @@ class Example
     }
 
     /**
-     * @param $text
+     * @return int
      */
-    public function say($text)
+    public function run($a, $b)
     {
-        $test = 0;
-        echo $text;
+        return $a + $b;
     }
 }

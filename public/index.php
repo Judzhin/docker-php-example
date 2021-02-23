@@ -5,9 +5,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 /** @var \Application\Example $example */
 $example = new \Application\Example;
-$example->say("Hello World!<br>");
 
-$i = 1000;
-$k = 2000;
+/** @var int $result */
+$result = $example->run(10, 20);
 
-printf("Refresh time: %s", date('Y.m.d:H:i:s'));
+printf("Result is: %s, at time %s", $result, date('Y.m.d:H:i:s'));
