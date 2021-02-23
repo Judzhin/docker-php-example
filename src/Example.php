@@ -21,10 +21,48 @@ class Example
     }
 
     /**
+     * @param int $a
+     * @param int $b
      * @return int
      */
-    public function run($a, $b)
+    private function sumOfFactorials(int $a, int $b):int
+    {
+        return $this->sum(
+            $this->factorial($a), $this->factorial($b)
+        );
+    }
+
+    /**
+     * @param int $num
+     * @return int
+     */
+    private function factorial(int $num): int
+    {
+        /** @var int $result */
+        $result = 1;
+        for ($i = 1; $i <= $num; $i++) {
+            $result = $result * $i;
+        }
+        return $result;
+    }
+
+    /**
+     * @param int $a
+     * @param int $b
+     * @return int
+     */
+    private function sum(int $a, int $b): int
     {
         return $a + $b;
+    }
+
+    /**
+     * @param int $a
+     * @param int $b
+     * @return mixed
+     */
+    public function run(int $a = 5, int $b = 10)
+    {
+        return $this->sumOfFactorials($a, $b);
     }
 }

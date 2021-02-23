@@ -7,6 +7,6 @@ require __DIR__ . '/../vendor/autoload.php';
 $example = new \Application\Example;
 
 /** @var int $result */
-$result = $example->run(10, 20);
+$result = $example->run(2, 3);
 
 printf("Result is: %s, at time %s", $result, date('Y.m.d:H:i:s'));
