@@ -23,7 +23,8 @@ class Example
     /**
      * @return int
      */
-    public function run($a, $b) {
+    public function run($a, $b)
+    {
         return $a + $b;
     }
 }
